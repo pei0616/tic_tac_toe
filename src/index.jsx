@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //載入react component
-//UI介面:遊戲盤Board、框框*9Cell、線段Line
-//title
+//UI介面:遊戲盤Board、Cell*9、線段Line
+
 class Title extends React.Component{
     render(){
-        return <h1 className="title">圈叉遊戲</h1>
+        return <h1 className="title">井字遊戲</h1>
     }
 }
 
@@ -20,7 +20,7 @@ class ResetBtn extends React.Component{
 }
 
     //Cell
-    class Cell extends React.Component{
+class Cell extends React.Component{
     render(){
         let text="";
         if(this.props.mark ===0){
@@ -58,7 +58,6 @@ class Line extends React.Component{
 
 //Board
 class Board extends React.Component{
-    
     constructor(props){
         super(props);
         this.state={
@@ -71,8 +70,7 @@ class Board extends React.Component{
     }
 
     render(){
-        
-        //繪圖，要把框框加入到裡面
+        //繪製cell
         //索引值
         /*
         0 1 2
