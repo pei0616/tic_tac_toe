@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+//html-webpack-plugin 可以幫助我們指定任意的 HTML 模板，並透過傳遞選項方式，生成對應的 HTML 文件，同時也會將 entry 內的所有靜態文件做引入動作
 const HtmlWebpackPlugin = require('html-webpack-plugin');//解析html template 頁面，把相關js、css路徑自動引入html頁面
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');//將css單獨抽離出來，在dist資料夾中產生
 module.exports={
@@ -11,7 +12,6 @@ module.exports={
     devtool:'eval-source-map',
     output:{
         path:path.resolve(__dirname,'dist'),
-        filename:'main.js'
     },
     //module：放置解析與轉譯之類的工具 (webpack 稱這些工具為 loader)
     module:{

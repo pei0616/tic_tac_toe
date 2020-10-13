@@ -8,18 +8,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports=merge(base,{
     mode:'production',
+    output:{
+        filename:'main.js'
+    },
     devtool:'source-map',
     module:{
         rules:[
             {
                 test:/\.(png|jpg|gif|jpe?g|svg)$/i,
                 use:[
-                    {
-                        loader:'file-loader',
-                        options:{
-                            name:'[name].[ext]',
-                        }
-                    },
                     {
                         loader:'image-webpack-loader',//壓縮圖片
                         options:{
